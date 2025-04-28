@@ -19,6 +19,9 @@ public:
 	virtual void ShutdownModule() override;
 	// End IModuleInterface Interface
 
-private;
+	FORCEINLINE EAssetTypeCategories::Type GetAssetTypeCategory() const { return AssetTypeCategory; }
+
+private:
+	EAssetTypeCategories::Type AssetTypeCategory;
 	TSharedPtr<FSlateStyleSet> StyleSet;
 };
