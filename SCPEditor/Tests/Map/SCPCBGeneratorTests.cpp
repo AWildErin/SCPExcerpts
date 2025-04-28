@@ -23,7 +23,7 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(FSCPCBGenerator_MyMap, "SCP.Map.CBGenerator.MyM
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FSCPCBGenerator_DONTBLINK, "SCP.Map.CBGenerator.DONTBLINK", EAutomationTestFlags::EditorContext | EAutomationTestFlags::ProductFilter)
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FSCPCBGenerator_JORGE, "SCP.Map.CBGenerator.JORGE", EAutomationTestFlags::EditorContext | EAutomationTestFlags::ProductFilter)
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FSCPCBGenerator_d9341, "SCP.Map.CBGenerator.d9341", EAutomationTestFlags::EditorContext | EAutomationTestFlags::ProductFilter)
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FSCPCBGenerator_dirtymetal, "SCP.Map.CBGenerator.dirtymetal", EAutomationTestFlags::EditorContext | EAutomationTestFlags::ProductFilter) \
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FSCPCBGenerator_dirtymetal, "SCP.Map.CBGenerator.dirtymetal", EAutomationTestFlags::EditorContext | EAutomationTestFlags::ProductFilter)
 
 bool FSCPCBGenerator_MyMap::RunTest(const FString&)
 {
