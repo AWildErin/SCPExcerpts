@@ -1,8 +1,11 @@
 #include "Actors/SCPBaseButton.h"
 
+#include "Components/SphereComponent.h"
 #include "Components/ArrowComponent.h"
 #include "FMODAudioComponent.h"
 #include "FMODEvent.h"
+
+#include "Misc/SCPPhysicsTypes.h"
 
 ASCPBaseButton::ASCPBaseButton()
 {
@@ -25,6 +28,11 @@ ASCPBaseButton::ASCPBaseButton()
 
 	ButtonAudioComponent = CreateDefaultSubobject<UFMODAudioComponent>("ButtonAudioComponent");
 	ButtonAudioComponent->SetupAttachment(RootComponent);
+
+	InteractionSphere = CreateDefaultSubobject<USphereComponent>("InteractionSphere");
+	InteractionSphere->SetSphereRadius(32.f);
+	InteractionSphere->SetCollisionProfileName(FSCPCollisionPresets::Preset_Interactable);
+	InteractionSphere->SetupAttachment(RootComponent);
 }
 
 void ASCPBaseButton::BeginPlay()

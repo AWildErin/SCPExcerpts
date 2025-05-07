@@ -10,7 +10,7 @@
 * @class ASCPBaseKeycardItem
 * A Base class for all items that are an inventory
 */
-UCLASS()
+UCLASS(Abstract)
 class SCPGAME_API ASCPBaseKeycardItem : public ASCPBaseItem
 {
 	GENERATED_BODY()

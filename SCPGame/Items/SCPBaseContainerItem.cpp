@@ -44,13 +44,13 @@ bool ASCPBaseContainerItem::OnItemDroppedOnto_Implementation(ASCPBaseItem* Other
 		return false;
 	}
 
-	UE_LOGFMT(LogSCPItem, Log, "Trying to add {item} onto {us}", OtherItem->GetName(), GetName());
+	UE_LOGFMT(LogSCPItem, Verbose, "Trying to add {item} onto {us}", OtherItem->GetName(), GetName());
 
 	// Check to see if we're allowed to place the item inside our container
 	auto Pred = [&OtherItem](TSubclassOf<ASCPBaseItem>& ArrayItem) { return OtherItem->IsA(ArrayItem); };
 	if (AllowedItemClassesList.Num() > 0 && !AllowedItemClassesList.ContainsByPredicate(Pred))
 	{
-		UE_LOGFMT(LogSCPItem, Log, "{item} did not pass the allowed check for {us}", OtherItem->GetName(), GetName());
+		UE_LOGFMT(LogSCPItem, Verbose, "{item} did not pass the allowed check for {us}", OtherItem->GetName(), GetName());
 		return false;
 	}
 
@@ -60,14 +60,14 @@ bool ASCPBaseContainerItem::OnItemDroppedOnto_Implementation(ASCPBaseItem* Other
 	// Try to add our item
 	if (!InventoryComponent->AddItem(OtherItem))
 	{
-		UE_LOGFMT(LogSCPItem, Log, "Failed to add {item} into {us}", OtherItem->GetName(), GetName());
+		UE_LOGFMT(LogSCPItem, Verbose, "Failed to add {item} into {us}", OtherItem->GetName(), GetName());
 		return false;
 	}
 
 	// Remove item from the other inventory
 	if (!OtherOwningInventory->RemoveItem(OtherItem))
 	{
-		UE_LOGFMT(LogSCPItem, Log, "Failed to remove {item} from {invcomp}", OtherItem->GetName(), OtherOwningInventory->GetName());
+		UE_LOGFMT(LogSCPItem, Verbose, "Failed to remove {item} from {invcomp}", OtherItem->GetName(), OtherOwningInventory->GetName());
 		return false;
 	}
 

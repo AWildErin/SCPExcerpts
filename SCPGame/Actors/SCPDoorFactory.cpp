@@ -27,7 +27,8 @@ ASCPDoorFactory::ASCPDoorFactory()
 	{
 		/** @todo This functionality isn't in just yet! */
 		Door->bSpawnsOpen = bStartOpen;
-		ensureMsgf(bStartOpen == false, TEXT("%s has defined bStartOpen! as of 17/09/2024, this is not currently implemented. Implement it then remove this!!!"), *GetNameSafe(this));
+		ensureMsgf(bStartOpen == false,
+				   TEXT("%s has defined bStartOpen! as of 17/09/2024, this is not currently implemented. Implement it then remove this!!!"), *GetNameSafe(this));
 	}
 }
 

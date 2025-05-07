@@ -20,6 +20,9 @@ public:
 	FText ItemDescription;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
+	FName CheatName;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 	TSoftObjectPtr<UTexture2D> ItemIcon;
 
 	/** Specifies whether or not we show an icon in the middle of the screen when equiped */

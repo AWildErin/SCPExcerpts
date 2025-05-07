@@ -7,6 +7,7 @@
 
 #include "SCPBaseButton.generated.h"
 
+class USphereComponent;
 class UArrowComponent;
 class UFMODAudioComponent;
 class UFMODEvent;
@@ -70,14 +71,7 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FSCPButtonEvent OnButtonPressFailed;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Button")
-	TObjectPtr<UStaticMeshComponent> ButtonMesh;
-
 	/** @custom_region{Audio} */
-
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Button|Audio")
-	TObjectPtr<UFMODAudioComponent> ButtonAudioComponent;
-
 	UPROPERTY(EditAnywhere, Category = "Button|Audio")
 	bool bMuteSounds;
 
@@ -89,14 +83,25 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "Button|Audio")
 	TObjectPtr<UFMODEvent> FailedSoundEvent;
-
 	/** @} */
 
 private:
+	/** @custom_region{Components}*/
 #if WITH_EDITORONLY_DATA
 	UPROPERTY()
 	TObjectPtr<UArrowComponent> ArrowComponent;
 #endif
+
+	UPROPERTY(EditDefaultsOnly, Category = "Button|Audio")
+	TObjectPtr<UFMODAudioComponent> ButtonAudioComponent;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Button")
+	TObjectPtr<UStaticMeshComponent> ButtonMesh;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Button")
+	TObjectPtr<USphereComponent> InteractionSphere;
+
+	/** @}*/
 
 	/** Whether or not the butten is currently being interacted with */
 	bool bPressInProgress;

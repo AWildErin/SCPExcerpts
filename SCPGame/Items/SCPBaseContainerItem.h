@@ -12,7 +12,7 @@ class USCPInventoryComponent;
 * @class ASCPBaseContainerItem
 * A Base class for all items that are an inventory
 */
-UCLASS()
+UCLASS(Abstract)
 class SCPGAME_API ASCPBaseContainerItem : public ASCPBaseItem
 {
 	GENERATED_BODY()

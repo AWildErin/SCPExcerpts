@@ -2,25 +2,26 @@
 
 #include "CoreMinimal.h"
 
+#include "GameFramework/Actor.h"
+
 #include "Items/SCPBaseItem.h"
 
-#include "SCPBaseDocumentItem.generated.h"
+#include "SCPBaseItemTest.generated.h"
 
 /**
-* @class ASCPBaseDocumentItem
-* A Base class for all items that are an inventory
+* @class ASCPBaseKeycardItem
+* Actor used within our tests
 */
-UCLASS(Abstract)
-class SCPGAME_API ASCPBaseDocumentItem : public ASCPBaseItem
+UCLASS(NotBlueprintable)
+class SCPGAME_API ASCPBaseItemTest : public ASCPBaseItem
 {
 	GENERATED_BODY()
 
 public:
-	ASCPBaseDocumentItem();
+	ASCPBaseItemTest();
 
 	// Begin AActor Interface
 	virtual void BeginPlay() override;
-	virtual void Tick(float DeltaTime) override;
 	// End AActor Interface
 
 	// Begin ASCPBaseItem Interface

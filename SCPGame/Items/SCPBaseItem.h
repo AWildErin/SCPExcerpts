@@ -16,7 +16,7 @@ class USCPInventoryComponent;
 * @class ASCPBaseItem
 * @todo Handle item collisions with other items and fake gravity on them like original CB
 */
-UCLASS()
+UCLASS(Abstract)
 class SCPGAME_API ASCPBaseItem
 	: public AActor
 	, public ISCPInteractInterface
